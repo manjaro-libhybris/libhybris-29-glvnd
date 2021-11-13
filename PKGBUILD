@@ -58,10 +58,4 @@ package() {
   mkdir -p EGL
   cd EGL
   ln -s ../hybris/EGL/eglhybris.h .
-
-  install -m755 -d "${pkgdir}/usr/lib/libhybris-egl"
-
-  for i in $(find ${pkgdir}/usr/lib/ -name 'libEGL.so*' -or -name 'libGLES*' -or -name 'libwayland-egl.so*'); do
-    mv "$i" "${pkgdir}/usr/lib/libhybris-egl/"
-  done
 }
